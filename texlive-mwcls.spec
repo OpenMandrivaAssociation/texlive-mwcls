@@ -1,3 +1,9 @@
+# revision 15878
+# category Package
+# catalog-ctan /macros/latex/contrib/mwcls
+# catalog-date 2009-09-28 14:47:14 +0200
+# catalog-license lppl
+# catalog-version 0.74
 Name:		texlive-mwcls
 Version:	0.74
 Release:	1
@@ -61,6 +67,7 @@ opening, closing, and blank pages.
 #- source
 %doc %{_texmfdistdir}/source/latex/mwcls/mwcls.dtx
 %doc %{_texmfdistdir}/source/latex/mwcls/mwcls.ins
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -71,3 +78,5 @@ opening, closing, and blank pages.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
