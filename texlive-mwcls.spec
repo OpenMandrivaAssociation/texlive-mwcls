@@ -6,7 +6,7 @@
 # catalog-version 0.74
 Name:		texlive-mwcls
 Version:	0.74
-Release:	8
+Release:	9
 Summary:	Polish-oriented document classes
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/mwcls
