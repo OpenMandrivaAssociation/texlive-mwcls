@@ -1,19 +1,13 @@
-# revision 15878
-# category Package
-# catalog-ctan /macros/latex/contrib/mwcls
-# catalog-date 2009-09-28 14:47:14 +0200
-# catalog-license lppl
-# catalog-version 0.74
 Name:		texlive-mwcls
-Version:	0.75
-Release:	2
+Version:	44352
+Release:	1
 Summary:	Polish-oriented document classes
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/mwcls
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mwcls.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mwcls.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mwcls.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mwcls.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mwcls.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mwcls.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -32,12 +26,12 @@ lists with long items, page styles have variants for normal,
 opening, closing, and blank pages.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -60,24 +54,11 @@ opening, closing, and blank pages.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.74-2
-+ Revision: 754241
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.74-1
-+ Revision: 719094
-- texlive-mwcls
-- texlive-mwcls
-- texlive-mwcls
-- texlive-mwcls
-
