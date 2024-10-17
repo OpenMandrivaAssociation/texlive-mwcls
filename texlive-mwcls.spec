@@ -3,7 +3,7 @@ Version:	44352
 Release:	2
 Summary:	Polish-oriented document classes
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/mwcls
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/mwcls
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mwcls.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mwcls.doc.r%{version}.tar.xz
